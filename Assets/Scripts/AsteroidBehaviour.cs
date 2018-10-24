@@ -46,6 +46,8 @@ public class AsteroidBehaviour : BasicBehaviour {
             controller.shake = AnimationTime;
            // this.gameObject.SetActive(false);
             animateCollision();
+            //Destroy(this, 0.5f);
+           
         }
     }
 
