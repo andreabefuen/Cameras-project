@@ -47,6 +47,9 @@
   <ItemGroup>
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamController.cs" />
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamRackGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\MapDisplay.cs" />
+     <Compile Include="Assets\Changes_2018\Script\MapGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\Noise.cs" />
      <Compile Include="Assets\Changes_2018\Script\ShipMovementGame.cs" />
      <Compile Include="Assets\Scripts\AsteroidBehaviour.cs" />
      <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />

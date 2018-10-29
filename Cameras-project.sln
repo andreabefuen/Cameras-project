@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{366DDA3E-8CD3-80AB-BAE1-061AC383BF18}") = "Cameras-project", "Assembly-CSharp.csproj", "{DCCD0084-7626-A5A3-BB5C-66504F4FAF4F}"
 EndProject
+Project("{366DDA3E-8CD3-80AB-BAE1-061AC383BF18}") = "Cameras-project", "Assembly-CSharp-Editor.csproj", "{445B061D-79EB-05F0-F0F8-3ACB2D72DE6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{DCCD0084-7626-A5A3-BB5C-66504F4FAF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCCD0084-7626-A5A3-BB5C-66504F4FAF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCCD0084-7626-A5A3-BB5C-66504F4FAF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445B061D-79EB-05F0-F0F8-3ACB2D72DE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445B061D-79EB-05F0-F0F8-3ACB2D72DE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445B061D-79EB-05F0-F0F8-3ACB2D72DE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445B061D-79EB-05F0-F0F8-3ACB2D72DE6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-							GlobalSection(MonoDevelopProperties) = preSolution
+																GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
