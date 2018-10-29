@@ -3,7 +3,7 @@ using System.Collections;
 
 public static class MeshGenerator {
 
-    public static MeshData GenerateTerrainMesh(float[,] heightMap)
+    public static MeshData GenerateTerrainMesh(float[,] heightMap, float heightMultiplier, AnimationCurve heightCurve, int levelOfDetail)
     {
         int width = heightMap.GetLength(0);
         int height = heightMap.GetLength(1);
@@ -11,20 +11,24 @@ public static class MeshGenerator {
         float topLeftX = (width - 1) / -2f;
         float topLeftZ = (height - 1) / 2f;
 
-        MeshData meshdata = new MeshData(width, height);
+        //if levelOfDetail is equal to 0, then is 1, otherwise multiply it by 2
+        int meshSimplificationIncrement = (levelOfDetail ==0)?1: levelOfDetail * 2;
+        int verticesPerLine = (width - 1) / meshSimplificationIncrement + 1;
+
+        MeshData meshdata = new MeshData(verticesPerLine, verticesPerLine);
         int vertexIndex = 0;
 
-        for (int y = 0; y < height; y++)
+        for (int y = 0; y < height; y+= meshSimplificationIncrement)
         {
-            for (int x = 0; x < width; x++)
+            for (int x = 0; x < width; x+= meshSimplificationIncrement)
             {
-                meshdata.vertices[vertexIndex] = new Vector3(topLeftX + x, heightMap[x, y], topLeftZ - y);
+                meshdata.vertices[vertexIndex] = new Vector3(topLeftX + x,heightCurve.Evaluate( heightMap[x, y]) * heightMultiplier, topLeftZ - y);
                 meshdata.uvs[vertexIndex] = new Vector2(x / (float)width, y / (float)height);
 
                 if (x < width - 1 && y < height - 1)
                 {
-                    meshdata.AddTriangles(vertexIndex, vertexIndex + width + 1, vertexIndex + width);
-                    meshdata.AddTriangles(vertexIndex + width + 1, vertexIndex, vertexIndex + 1);
+                    meshdata.AddTriangles(vertexIndex, vertexIndex + verticesPerLine + 1, vertexIndex + verticesPerLine);
+                    meshdata.AddTriangles(vertexIndex + verticesPerLine + 1, vertexIndex, vertexIndex + 1);
                 }
                 vertexIndex++;
             }
