@@ -22,7 +22,7 @@ public static class MeshGenerator {
         //if levelOfDetail is equal to 0, then is 1, otherwise multiply it by 2
         int verticesPerLine = (meshSize - 1) / meshSimplificationIncrement + 1;
 
-        MeshData meshdata = new MeshData(verticesPerLine);
+        MeshData meshData = new MeshData(verticesPerLine);
         int[,] vertexIndicesMap = new int[borderedSize, borderedSize];
         int meshVertexIndex = 0;
         int borderVertexIndex = -1;
@@ -55,7 +55,7 @@ public static class MeshGenerator {
                 float height = heightCurve.Evaluate(heightMap[x, y]) * heightMultiplier;
                 Vector3 vertexPosition = new Vector3(topLeftX + percent.x * meshSizeUnsimplified, height, topLeftZ - percent.y * meshSizeUnsimplified);
 
-                meshdata.AddVertex(vertexPosition, percent, vertexIndex);
+                meshData.AddVertex(vertexPosition, percent, vertexIndex);
 
                 if (x < borderedSize - 1 && y < borderedSize - 1)
                 {
@@ -66,13 +66,15 @@ public static class MeshGenerator {
                     int d = vertexIndicesMap[x + meshSimplificationIncrement, y + meshSimplificationIncrement];
 
 
-                    meshdata.AddTriangles(a, d, c);
-                    meshdata.AddTriangles(d, a, b);
+                    meshData.AddTriangles(a, d, c);
+                    meshData.AddTriangles(d, a, b);
                 }
                 vertexIndex++;
             }
         }
-        return meshdata;
+
+        meshData.BakeNormals();
+        return meshData;
     }
 }
 public class MeshData
@@ -81,6 +83,8 @@ public class MeshData
      int[] triangles;
 
      Vector2[] uvs;
+
+    Vector3[] bakedNormals;
 
     Vector3[] borderVertices;
     int[] borderTriangles;
@@ -209,13 +213,19 @@ public class MeshData
 
     }
 
+    public void BakeNormals()
+    {
+        bakedNormals = CalculateNormals();
+    }
+
+
     public Mesh CreateMesh()
     {
         Mesh mesh = new Mesh();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.uv = uvs;
-        mesh.normals = CalculateNormals();
+        mesh.normals = bakedNormals;
         return mesh;
     }
 }
