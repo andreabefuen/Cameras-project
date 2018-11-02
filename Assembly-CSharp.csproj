@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamController.cs" />
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamRackGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\CameraControllerFollower.cs" />
      <Compile Include="Assets\Changes_2018\Script\EndlessTerrain.cs" />
      <Compile Include="Assets\Changes_2018\Script\FalloffGenerator.cs" />
      <Compile Include="Assets\Changes_2018\Script\HideOnPlay.cs" />
@@ -81,6 +82,10 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Hub/Editor/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F117551F-5B26-F68E-C752-DF55721C8087}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
