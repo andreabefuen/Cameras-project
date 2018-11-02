@@ -48,6 +48,7 @@
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamController.cs" />
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamRackGenerator.cs" />
      <Compile Include="Assets\Changes_2018\Script\EndlessTerrain.cs" />
+     <Compile Include="Assets\Changes_2018\Script\FalloffGenerator.cs" />
      <Compile Include="Assets\Changes_2018\Script\MapDisplay.cs" />
      <Compile Include="Assets\Changes_2018\Script\MapGenerator.cs" />
      <Compile Include="Assets\Changes_2018\Script\MeshGenerator.cs" />
