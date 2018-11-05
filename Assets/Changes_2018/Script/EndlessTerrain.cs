@@ -110,6 +110,8 @@ public class EndlessTerrain : MonoBehaviour
             meshRenderer = meshObject.AddComponent<MeshRenderer>();
             meshFilter = meshObject.AddComponent<MeshFilter>();
             meshCollider = meshObject.AddComponent<MeshCollider>();
+            meshCollider.convex = true;
+            meshCollider.isTrigger = true;
             meshRenderer.material = material;
 
             meshObject.transform.position = positionV3 * scale;
@@ -129,6 +131,8 @@ public class EndlessTerrain : MonoBehaviour
 
             mapGenerator.RequestMapData(position, OnMapDataReceived);
         }
+
+        
 
         void OnMapDataReceived(MapData mapData)
         {
