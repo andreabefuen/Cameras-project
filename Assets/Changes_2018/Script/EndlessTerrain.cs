@@ -78,6 +78,8 @@ public class EndlessTerrain : MonoBehaviour
         }
     }
 
+    
+
     public class TerrainChunk
     {
 
@@ -109,9 +111,10 @@ public class EndlessTerrain : MonoBehaviour
             meshObject = new GameObject("Terrain Chunk");
             meshRenderer = meshObject.AddComponent<MeshRenderer>();
             meshFilter = meshObject.AddComponent<MeshFilter>();
+            meshObject.tag = "Montain";
             meshCollider = meshObject.AddComponent<MeshCollider>();
-            meshCollider.convex = true;
-            meshCollider.isTrigger = true;
+            //meshCollider.convex = true;
+            //meshCollider.isTrigger = true;
             meshRenderer.material = material;
 
             meshObject.transform.position = positionV3 * scale;
@@ -131,6 +134,8 @@ public class EndlessTerrain : MonoBehaviour
 
             mapGenerator.RequestMapData(position, OnMapDataReceived);
         }
+
+        
 
         
 

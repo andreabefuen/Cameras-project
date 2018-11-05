@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class ShipMovementGame : MonoBehaviour {
 
     Rigidbody shipRigidbody;
@@ -19,6 +20,7 @@ public class ShipMovementGame : MonoBehaviour {
     private float sweetSpot;
     private float advanceDistance;
 
+    private Vector3 initialPosition;
 
     // Use this for initialization
     void Start () {
@@ -30,6 +32,8 @@ public class ShipMovementGame : MonoBehaviour {
         shipRigidbody = GetComponent<Rigidbody>();
 
         Debug.Log(Screen.width);
+
+        initialPosition = transform.position;
 
     }
 	
@@ -56,6 +60,28 @@ public class ShipMovementGame : MonoBehaviour {
 
 	
 	}
+
+
+    void RestartPosition()
+    {
+        transform.position = initialPosition;
+    }
+
+    void OnTriggerEnter(Collider c)
+    {
+
+        if (c.tag == "Montain")
+        {
+
+            Debug.Log("A TE MORISTE");
+            //Application.LoadLevel("TerrainTutorial");
+
+            Invoke("RestartPosition", 1F);
+
+
+        }
+    }
+
 
     void MoveAvance(float h, float v, float a)
     {
