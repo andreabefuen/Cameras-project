@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamController.cs" />
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamRackGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\AsteroidMovement.cs" />
      <Compile Include="Assets\Changes_2018\Script\CameraControllerFollower.cs" />
      <Compile Include="Assets\Changes_2018\Script\EndlessTerrain.cs" />
      <Compile Include="Assets\Changes_2018\Script\FalloffGenerator.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\Changes_2018\Script\Noise.cs" />
      <Compile Include="Assets\Changes_2018\Script\ShipMovementController.cs" />
      <Compile Include="Assets\Changes_2018\Script\ShipMovementGame.cs" />
+     <Compile Include="Assets\Changes_2018\Script\SpawnerOfThings.cs" />
      <Compile Include="Assets\Changes_2018\Script\TextureGenerator.cs" />
      <Compile Include="Assets\Scripts\AsteroidBehaviour.cs" />
      <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
