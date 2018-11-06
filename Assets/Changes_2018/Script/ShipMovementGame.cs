@@ -76,7 +76,7 @@ public class ShipMovementGame : MonoBehaviour {
             Debug.Log("A TE MORISTE");
             //Application.LoadLevel("TerrainTutorial");
 
-            Invoke("RestartPosition", 1F);
+            Invoke("RestartPosition", 1f);
 
 
         }
