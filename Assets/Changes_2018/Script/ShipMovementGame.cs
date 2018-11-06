@@ -26,8 +26,8 @@ public class ShipMovementGame : MonoBehaviour {
     void Start () {
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-       // camController = mainCam.GetComponent<StereoscopicCamController>();
-       // sweetSpot = camController.SWEETSPOTLOCATION;
+      //camController = mainCam.GetComponent<StereoscopicCamController>();
+      //sweetSpot = camController.SWEETSPOTLOCATION;
 
         shipRigidbody = GetComponent<Rigidbody>();
 
