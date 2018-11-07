@@ -49,10 +49,6 @@
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamRackGenerator.cs" />
      <Compile Include="Assets\Changes_2018\Script\AsteroidMovement.cs" />
      <Compile Include="Assets\Changes_2018\Script\CameraControllerFollower.cs" />
-     <Compile Include="Assets\Changes_2018\Script\Data\NoiseData.cs" />
-     <Compile Include="Assets\Changes_2018\Script\Data\TerrainData.cs" />
-     <Compile Include="Assets\Changes_2018\Script\Data\TextureData.cs" />
-     <Compile Include="Assets\Changes_2018\Script\Data\UpdatableData.cs" />
      <Compile Include="Assets\Changes_2018\Script\EndlessTerrain.cs" />
      <Compile Include="Assets\Changes_2018\Script\FalloffGenerator.cs" />
      <Compile Include="Assets\Changes_2018\Script\HideOnPlay.cs" />
