@@ -113,7 +113,7 @@ public class EndlessTerrain : MonoBehaviour
             meshFilter = meshObject.AddComponent<MeshFilter>();
             meshObject.tag = "Montain";
             meshCollider = meshObject.AddComponent<MeshCollider>();
-            //meshCollider.convex = true;
+            meshCollider.convex = true;
             //meshCollider.isTrigger = true;
             meshRenderer.material = material;
 

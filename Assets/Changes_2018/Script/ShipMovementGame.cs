@@ -76,7 +76,7 @@ public class ShipMovementGame : MonoBehaviour {
             Debug.Log("A TE MORISTE");
             //Application.LoadLevel("TerrainTutorial");
 
-            Invoke("RestartPosition", 1f);
+            //Invoke("RestartPosition", 1f);
 
 
         }
@@ -98,6 +98,8 @@ public class ShipMovementGame : MonoBehaviour {
         pos.x = Mathf.Clamp01(pos.x);
         pos.y = Mathf.Clamp01(pos.y);
         transform.position = mainCam.ViewportToWorldPoint(pos);
+
+ 
 
         shipRigidbody.MovePosition(transform.position + movement);
     }

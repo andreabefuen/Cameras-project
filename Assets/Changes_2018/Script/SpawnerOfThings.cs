@@ -14,6 +14,8 @@ public class SpawnerOfThings : MonoBehaviour {
     private int asteroidPoolIterator;
     public static List<GameObject> asteroidPool;
 
+    public float distanceOfCreation;
+
     public AnimationCurve trajectory;
 
 
@@ -23,6 +25,11 @@ public class SpawnerOfThings : MonoBehaviour {
         asteroidPool = new List<GameObject>();
 
         BasicBehaviour.trajectory = trajectory;
+
+        for (int i = 0; i < 30; i++)
+        {
+            Spawn();
+        }
 	
 	}
 	
@@ -48,7 +55,7 @@ public class SpawnerOfThings : MonoBehaviour {
 
 
             //asteroid.transform.position = (Vector3)Random.insideUnitCircle + this.transform.position;
-            asteroid.transform.position = new Vector3(Random.value, Random.value, 100f);
+            asteroid.transform.position = new Vector3(Random.value, Random.value, distanceOfCreation);
 
             asteroid.transform.position = Camera.main.ViewportToWorldPoint(asteroid.transform.position);
 
