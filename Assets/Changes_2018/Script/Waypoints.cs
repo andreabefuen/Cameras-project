@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Waypoints : MonoBehaviour {
 
@@ -11,6 +12,13 @@ public class Waypoints : MonoBehaviour {
 
     private int indexway = 0;
 
+    public float timer = 0f;
+
+    public Text timerText;
+    public Text warningText;
+
+
+    private ShipMovementGame shipManual;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +31,9 @@ public class Waypoints : MonoBehaviour {
         }
 
         StartCoroutine(FollowPath(waypoints));
+        shipManual = GetComponent<ShipMovementGame>();
+        shipManual.enabled = false;
+        warningText.enabled = false;
     }
 	
     IEnumerator FollowPath(Vector3[] waypoints)
@@ -35,7 +46,12 @@ public class Waypoints : MonoBehaviour {
 
         while(true)
         {
-            transform.LookAt(targetWaypoint);
+            //transform.LookAt(targetWaypoint);
+           
+
+            Quaternion look = Quaternion.LookRotation(targetWaypoint - transform.position);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime);
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint, speed * Time.deltaTime);
             if (transform.position == targetWaypoint)
             {
@@ -72,6 +88,32 @@ public class Waypoints : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-	
+        timer += Time.deltaTime;
+        timerText.text = "TIME: " + (int) timer;
+
+        if(timer >= 18f)
+        {
+            warningText.enabled = true;
+            warningText.transform.localScale = Vector3.Lerp(warningText.transform.localScale, new Vector3(3, 3, 3), Time.deltaTime);
+        }
+
+        if (timer >= 20f && timer < 23f)
+        {
+            Debug.Log("Se termina el automatico pasamos al manual");
+            
+            StopAllCoroutines();
+           
+           
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, Time.deltaTime);
+
+
+        }
+        else if(timer > 23f)
+        {
+            this.enabled = false;
+            shipManual.enabled = true;
+            warningText.enabled = false;
+        }
+
 	}
 }
