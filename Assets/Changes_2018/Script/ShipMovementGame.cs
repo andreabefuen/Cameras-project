@@ -126,6 +126,7 @@ public class ShipMovementGame : MonoBehaviour {
         else
         {
             shipRigidbody.AddTorque(rotation, ForceMode.VelocityChange);
+            
         }
 
 

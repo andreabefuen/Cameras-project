@@ -60,6 +60,7 @@
      <Compile Include="Assets\Changes_2018\Script\ShipMovementGame.cs" />
      <Compile Include="Assets\Changes_2018\Script\SpawnerOfThings.cs" />
      <Compile Include="Assets\Changes_2018\Script\TextureGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\Waypoints.cs" />
      <Compile Include="Assets\Scripts\AsteroidBehaviour.cs" />
      <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
      <Compile Include="Assets\Scripts\BasicBehaviour.cs" />
