@@ -70,10 +70,10 @@ public class AsteroidMovement : MonoBehaviour {
         this.transform.Rotate(rotationangle, angularSpeed * Time.deltaTime);
         this.transform.Translate(Vector3.back * 0.15f);
 
-        if(transform.position.z < Camera.main.transform.position.z)
-        {
-            SpawnerOfThings.asteroidPool.Remove(this.gameObject);
-            Destroy(this.gameObject, 0.5f);
-        }
+       //if(transform.position.z < Camera.main.transform.position.z)
+       //{
+       //    SpawnerOfThings.asteroidPool.Remove(this.gameObject);
+       //    Destroy(this.gameObject, 0.5f);
+       //}
     }
 }

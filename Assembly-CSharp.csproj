@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamController.cs" />
      <Compile Include="Assets\Autostereoscopy\Scripts\StereoscopicCamRackGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\Activate3D.cs" />
      <Compile Include="Assets\Changes_2018\Script\AsteroidMovement.cs" />
      <Compile Include="Assets\Changes_2018\Script\CameraControllerFollower.cs" />
      <Compile Include="Assets\Changes_2018\Script\EndlessTerrain.cs" />
