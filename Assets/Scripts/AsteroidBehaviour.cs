@@ -10,6 +10,9 @@ public class AsteroidBehaviour : BasicBehaviour {
     private Vector3 rotationangle;
     private float baseSpeed;
     Color baseColor;
+
+    private GameObject gamecontroller;
+
 	// Use this for initialization
 	void Start () {
         Speed *= 0.8f;
@@ -19,6 +22,8 @@ public class AsteroidBehaviour : BasicBehaviour {
         Speed *= Random.Range(0.75f, 1.25f);
         rotationangle = Vector3.right * Random.Range(0f, 1f) + Vector3.up * Random.Range(0f, 1f) + Vector3.forward * Random.Range(0f, 1f);
         baseColor = mat.color;
+
+        gamecontroller = GameObject.Find("GameController");
     }
 	
 	// Update is called once per frame
@@ -46,7 +51,9 @@ public class AsteroidBehaviour : BasicBehaviour {
             controller.shake = AnimationTime;
            // this.gameObject.SetActive(false);
             animateCollision();
-            Destroy(this, 0.5f);
+            //Destroy(this, 0.5f);
+            Debug.Log("Colision asteroide");
+            gamecontroller.GetComponent<GameView>().GetDamage();
            
         }
     }

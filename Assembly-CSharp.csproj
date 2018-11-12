@@ -51,6 +51,7 @@
      <Compile Include="Assets\Changes_2018\Script\CameraControllerFollower.cs" />
      <Compile Include="Assets\Changes_2018\Script\EndlessTerrain.cs" />
      <Compile Include="Assets\Changes_2018\Script\FalloffGenerator.cs" />
+     <Compile Include="Assets\Changes_2018\Script\GameView.cs" />
      <Compile Include="Assets\Changes_2018\Script\HideOnPlay.cs" />
      <Compile Include="Assets\Changes_2018\Script\MapDisplay.cs" />
      <Compile Include="Assets\Changes_2018\Script\MapGenerator.cs" />

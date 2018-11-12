@@ -52,12 +52,12 @@ public class SpawnerOfThings : MonoBehaviour {
             int randomAsteroid = Random.Range(0, typesAsteroids.Length);
             GameObject asteroid = GameObject.Instantiate(typesAsteroids[randomAsteroid]);
 
-
-
             //asteroid.transform.position = (Vector3)Random.insideUnitCircle + this.transform.position;
-            asteroid.transform.position = new Vector3(Random.value, Random.value, distanceOfCreation);
 
-            asteroid.transform.position = Camera.main.ViewportToWorldPoint(asteroid.transform.position);
+            asteroid.transform.position = (Vector3)Random.insideUnitCircle + this.transform.position;
+           // asteroid.transform.position = new Vector3(Random.value, Random.value, distanceOfCreation);
+
+            //asteroid.transform.position = Camera.main.ViewportToWorldPoint(asteroid.transform.position);
 
             asteroid.transform.localScale = Vector3.one * Random.Range(0.3f, 0.8f);
             //asteroid.AddComponent<AsteroidBehaviour>();

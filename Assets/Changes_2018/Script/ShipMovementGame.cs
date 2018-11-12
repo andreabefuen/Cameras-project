@@ -52,6 +52,7 @@ public class ShipMovementGame : MonoBehaviour {
         Turning(h, v);
 
         MoveAvance(h,v, avance);
+        //Move(h, v);
 
        // Debug.Log("SFJSF: " + transform.forward * h * -1);
 

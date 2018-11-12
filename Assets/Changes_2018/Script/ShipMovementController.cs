@@ -9,6 +9,8 @@ public class ShipMovementController : MonoBehaviour {
     private ShipMovementGame manualMovement;
     bool automaticaActivate;
 
+    private float timer;
+
 	// Use this for initialization
 	void Start () {
 
@@ -24,24 +26,34 @@ public class ShipMovementController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKey(KeyCode.K)){
-            if (!automaticaActivate)
-            {
-                automaticaActivate = true;
-                Debug.Log("AUTOMATIC SHIP");
-                manualMovement.enabled = false;
-                automaticMovement.enabled = true;
-            }
-            else
-            {
-                automaticaActivate = false;
-                Debug.Log("MANUAL SHIP");
-                manualMovement.enabled = true;
-                automaticMovement.enabled = false;
-            }
-          
-           
+        timer += Time.deltaTime;
+
+        if(timer >= 22 && timer < 23)
+        {
+            automaticaActivate = false;
+            Debug.Log("MANUAL SHIP");
+            manualMovement.enabled = true;
+            automaticMovement.enabled = false;
         }
+
+       // if (Input.GetKey(KeyCode.K)){
+       //     if (!automaticaActivate)
+       //     {
+       //         automaticaActivate = true;
+       //         Debug.Log("AUTOMATIC SHIP");
+       //         manualMovement.enabled = false;
+       //         automaticMovement.enabled = true;
+       //     }
+       //     else
+       //     {
+       //         automaticaActivate = false;
+       //         Debug.Log("MANUAL SHIP");
+       //         manualMovement.enabled = true;
+       //         automaticMovement.enabled = false;
+       //     }
+       //   
+       //    
+       // }
 
 	
 	}
