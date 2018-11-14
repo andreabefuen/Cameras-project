@@ -5,10 +5,10 @@ using System;
 
 public class StereoscopicCamRackGenerator : MonoBehaviour
 {
-    
+
     #region Private_Var_Reg
 
-    public static float INTERPUPILLARY_DISTANCE= 0.03f; //0.01f
+    public static float INTERPUPILLARY_DISTANCE = 0.01f;
     public static float SWEETSPOTLOCATION = 2.5f; //2.5f
     private Camera[] cams = new Camera[8];
    

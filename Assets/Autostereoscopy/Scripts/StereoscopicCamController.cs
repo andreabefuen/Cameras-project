@@ -154,7 +154,7 @@ public class StereoscopicCamController : MonoBehaviour {
         resetSweetspot();
 
         if (Interpupilary != null)
-            Interpupilary.text = "INTERPUPILARY: " + current_Interpupilary + "GU";
+            Interpupilary.text = "INTERPUPILARY: " + current_Interpupilary + "u";
 
     }
 
@@ -178,7 +178,7 @@ public class StereoscopicCamController : MonoBehaviour {
             i++;
         }
         if (Interpupilary != null)
-            Interpupilary.text = "INTERPUPILARY: " + current_Interpupilary * 1e2 + "mm";
+            Interpupilary.text = "INTERPUPILARY: " + current_Interpupilary  + "u";
     }
     private void changeFOV(float FOV)
     {
