@@ -113,7 +113,23 @@ public class GameController : MonoBehaviour {
             Time.timeScale = 1;
             Application.LoadLevel("Experiment3");
         }
-       
+        else if (Input.GetKeyDown(KeyCode.F5))
+        {
+            Time.timeScale = 1;
+            Application.LoadLevel("TerrainExperiment1");
+        }
+        else if (Input.GetKeyDown(KeyCode.F6))
+        {
+            Time.timeScale = 1;
+            
+            Application.LoadLevel("TerrainExperiment2");
+        }
+        else if (Input.GetKeyDown(KeyCode.F7))
+        {
+            Time.timeScale = 1;
+            Application.LoadLevel("TerrainExperiment3");
+        }
+
         if (Input.GetKey(KeyCode.T))
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))

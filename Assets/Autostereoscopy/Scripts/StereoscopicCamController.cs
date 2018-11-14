@@ -85,18 +85,33 @@ public class StereoscopicCamController : MonoBehaviour {
             }
            // resetSweetspot();
         }
-
-        else if (Input.GetKey(KeyCode.KeypadPlus))
+        //Cambio interpopularity
+        else if (Input.GetKey(KeyCode.I))
         {
-            current_Interpupilary += INTERPUPILARY_INCREMENT;
-            changeInterpupilary();
+            if (Input.GetKey(KeyCode.KeypadPlus))
+            {
+                current_Interpupilary += INTERPUPILARY_INCREMENT;
+                changeInterpupilary();
+            }
+            else if (Input.GetKey(KeyCode.KeypadMinus))
+            {
+                current_Interpupilary -= INTERPUPILARY_INCREMENT;
+           
+                changeInterpupilary();
+            }  
         }
-        else if (Input.GetKey(KeyCode.KeypadMinus))
-        {
-            current_Interpupilary -= INTERPUPILARY_INCREMENT;
 
-            changeInterpupilary();
-        }
+        // else if (Input.GetKey(KeyCode.KeypadPlus))
+        // {
+        //     current_Interpupilary += INTERPUPILARY_INCREMENT;
+        //     changeInterpupilary();
+        // }
+        // else if (Input.GetKey(KeyCode.KeypadMinus))
+        // {
+        //     current_Interpupilary -= INTERPUPILARY_INCREMENT;
+        //
+        //     changeInterpupilary();
+        // } 
         else if (Input.GetKeyDown(KeyCode.R))
         {
            

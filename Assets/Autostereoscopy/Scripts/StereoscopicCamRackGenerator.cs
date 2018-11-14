@@ -20,7 +20,7 @@ public class StereoscopicCamRackGenerator : MonoBehaviour
          [Tooltip("This is the camera that will turn in to 8 cameras Rendering to texture")]
          public Camera CameraToBeReplicated;
          public Camera[] Cams  { get { return cams; }}
-         private float fov = 30f;//23.402f;
+         public float fov;//23.402f;
 
          public float FOV
          {
