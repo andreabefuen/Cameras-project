@@ -132,6 +132,10 @@ public class GameController : MonoBehaviour {
 
             Application.LoadLevel("TerrainExperiment3");
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
         if (Input.GetKey(KeyCode.T))
         {

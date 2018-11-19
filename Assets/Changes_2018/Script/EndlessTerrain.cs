@@ -43,7 +43,7 @@ public class EndlessTerrain : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0, 0, -10), 10f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(0, 0, -10), 20f * Time.deltaTime); //Movimiento suelo
 
         viewerPosition = new Vector2(viewer.position.x, viewer.position.z) / scale;
 
@@ -221,7 +221,7 @@ public class EndlessTerrain : MonoBehaviour
 
         public void SetVisible(bool visible)
         {
-            meshObject.SetActive(visible);
+            //meshObject.SetActive(visible);
         }
 
         public bool IsVisible()
