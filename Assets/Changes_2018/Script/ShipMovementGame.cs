@@ -22,12 +22,16 @@ public class ShipMovementGame : MonoBehaviour {
 
     private Vector3 initialPosition;
 
+    private float t;
+    private float m_Damping = 0.3f;
+    private const float k_ExpDampingCoef = -5f;
+
     // Use this for initialization
     void Start () {
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-       // camController = mainCam.GetComponent<StereoscopicCamController>();
-       // sweetSpot = camController.SWEETSPOTLOCATION;
+        camController = mainCam.GetComponent<StereoscopicCamController>();
+        sweetSpot = camController.SWEETSPOTLOCATION;
 
         shipRigidbody = GetComponent<Rigidbody>();
 
@@ -54,13 +58,24 @@ public class ShipMovementGame : MonoBehaviour {
         MoveAvance(h,v, avance);
         //Move(h, v);
 
-       // Debug.Log("SFJSF: " + transform.forward * h * -1);
-
-     
+        // Debug.Log("SFJSF: " + transform.forward * h * -1);
 
 
-	
-	}
+        t = m_Damping * (1f - Mathf.Exp(k_ExpDampingCoef * Time.deltaTime / Time.timeScale));
+        if(avance > 0)
+        {
+            camController.changeSweetSpotLocationDirectly(Mathf.Lerp(camController.Current_Sweetspot,
+                       camController.SWEETSPOTLOCATION + 8, t));
+        }
+        else
+        {
+            camController.changeSweetSpotLocationDirectly(Mathf.Lerp(camController.Current_Sweetspot,
+                    camController.SWEETSPOTLOCATION, t));
+        }
+        sweetSpot = camController.Current_Sweetspot;
+    }
+
+    
 
 
     void RestartPosition()
@@ -87,6 +102,9 @@ public class ShipMovementGame : MonoBehaviour {
     void MoveAvance(float h, float v, float a)
     {
         movement.Set(h, v, a);
+
+
+
         movement = movement.normalized * speed * Time.deltaTime;
 
         Vector3 newPos = new Vector3();
@@ -98,11 +116,14 @@ public class ShipMovementGame : MonoBehaviour {
         Vector3 pos = mainCam.WorldToViewportPoint(transform.position);
         pos.x = Mathf.Clamp01(pos.x);
         pos.y = Mathf.Clamp01(pos.y);
+        pos.z = Mathf.Clamp(pos.z, 1.5f, 100);
+        
         transform.position = mainCam.ViewportToWorldPoint(pos);
 
- 
+        
 
         shipRigidbody.MovePosition(transform.position + movement);
+
     }
 
     void Turning(float h, float v)
@@ -152,6 +173,9 @@ public class ShipMovementGame : MonoBehaviour {
         transform.position = mainCam.ViewportToWorldPoint(pos);
 
         shipRigidbody.MovePosition(transform.position + movement);
+
+
+
 
         //shipRigidbody.MovePosition(transform.position + movement);
 
