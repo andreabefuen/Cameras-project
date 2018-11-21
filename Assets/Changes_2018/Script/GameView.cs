@@ -8,6 +8,8 @@ public class GameView : MonoBehaviour {
     public Text timerText;
     public Text readyText;
 
+    private AudioSource audio;
+
     public GameObject initialPanel;
 
     private float timer;
@@ -17,6 +19,8 @@ public class GameView : MonoBehaviour {
        
         readyText.enabled = false;
         initialPanel.SetActive(true);
+
+        audio = GetComponent<AudioSource>();
         
 
     }
@@ -63,6 +67,7 @@ public class GameView : MonoBehaviour {
     public void GetDamage()
     {
         panel.SetActive(true);
+        audio.Play();
         Invoke("DisableDamage", 0.3f);
 
     }
