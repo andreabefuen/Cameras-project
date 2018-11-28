@@ -7,6 +7,7 @@ public class GameView : MonoBehaviour {
     public GameObject panel;
     public Text timerText;
     public Text readyText;
+    public Text endText;
 
     private AudioSource audio;
 
@@ -19,8 +20,10 @@ public class GameView : MonoBehaviour {
        
         readyText.enabled = false;
         initialPanel.SetActive(true);
+        endText.enabled = false;
 
         audio = GetComponent<AudioSource>();
+        Time.timeScale = 1;
         
 
     }
@@ -30,10 +33,9 @@ public class GameView : MonoBehaviour {
         timer += Time.deltaTime;
         timerText.text = "TIMER: " + (int) timer;
 
-
         if (Input.GetKeyDown(KeyCode.Space) && initialPanel.activeSelf == true)
         {
-            //Time.timeScale = 1;
+            Time.timeScale = 1;
             initialPanel.SetActive(false);
         }
 
@@ -57,10 +59,11 @@ public class GameView : MonoBehaviour {
 
         if (timer > 60f)
         {
-            
-            Debug.Log("Terminar juego");
-            int aux = Application.loadedLevel + 1;
-            Application.LoadLevel(aux);
+            endText.enabled = true;
+            Time.timeScale = 0;
+           //Debug.Log("Terminar juego");
+           //int aux = Application.loadedLevel + 1;
+           //Application.LoadLevel(aux);
         }
 	}
 
